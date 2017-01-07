@@ -25,6 +25,12 @@
 
 **Thoughts**: The first thing I did today - sending an SMS via an HTML form - was pretty easy. The second part - getting a confirmation message when the SMS is successfully delivered - was a bit harder. I wanted to send a confirmation message to my server, but I needed a URL for Twilio to contact, and my server is not deployed. I played with surge.sh (which doesn't let you deploy a server) and Request Bin (which received status updates from Twilio but couldn't communicate them with my server) before realizing that ngrok would do the trick. The key was understanding that I could stop and start my server without changing my ngrok URL.
 
+### Day 4: Friday, January 6
+
+**Today's Progress**: I updated my server to log text messages sent via Twilio, text messages received via Twilio, and text message delivery notifications from Twilio. Right now, I'm just writing this data to a text file using Node's fs module. The next step is to use a database - I'm excited!
+
+**Thoughts**: A lot of the code I wrote today likely won't appear in the finished version of my project, but I think this work helped me get more comfortable with Twilio's REST API. I also think I'm doing a pretty good job of breaking this project into small pieces and tackling them one at a time. It's really nice to have the freedom to work slowly - to be able to dive deeply into concepts I want to understand better, without feeling guilty about going down a rabbit hole! Thinking forward, it may be difficult to link an outbound question SMS with its associated inbound response - I don't think the free version of Twilio's API provides the concept of a "conversation".
+
 ### Interim goals
 * Store my sent and received messages. First in Firebase and then in Redis or a more robust SQL database (I don't need speed)?
 * Try Phoenix Framework if throughput is high
