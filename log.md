@@ -40,7 +40,14 @@
 
 **Thoughts**: Today was another day where I read more than I wrote, but I'm really enjoying this opportunity to revisit the fundamentals of databases. The hour flew by! I'm also trying to remind myself that it's OK to try things out in my code before I fully understand them and then read the docs or source code to understand why my code is or isn't working as I expect it to.
 
+## Day 7: Monday, January 9
+
+**Today's Progress**: I created an Exchange table and linked it to my User table. (I'm defining an exchange as one interaction between the app and the user, where the app asks a question and the user answers it.)
+
+**Thoughts**: I'm working on wrapping my head around associations and foreign keys. Would I learn these concepts better if I used raw SQL instead of Sequelize, even though that would be more difficult and probably not as secure or production-friendly? I'm also noticing that there is a lot of overlap between the different sections of the Sequelize documentation, and it can be hard to know which section will be most useful. It would be helpful if I could find some better documentation for MySQL too. This process feels slow, but I do think I'm learning a lot! 
+
 ### Interim goals
 * Store my sent and received messages using MySQL: http://docs.sequelizejs.com/en/latest/docs/getting-started/#your-first-model.
+* Separate server.js into smaller modules.
 * Validate database fields.
 * Try Phoenix Framework if throughput is high
