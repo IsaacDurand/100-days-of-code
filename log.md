@@ -34,6 +34,13 @@
 
 **Thoughts**: I didn't write much code today, but I think I made a bit of progress wrapping my head around how databases work and how apps interact with them. These are topics I really want to learn more about, so I'm glad I'm exploring them, even though they make my head hurt. :)
 
+## Day 6: Sunday, January 8
+
+**Today's Progress**: I used Sequelize to create a user table and add rows to it.
+
+**Thoughts**: Today was another day where I read more than I wrote, but I'm really enjoying this opportunity to revisit the fundamentals of databases. The hour flew by! I'm also trying to remind myself that it's OK to try things out in my code before I fully understand them and then read the docs or source code to understand why my code is or isn't working as I expect it to.
+
 ### Interim goals
 * Store my sent and received messages using MySQL: http://docs.sequelizejs.com/en/latest/docs/getting-started/#your-first-model.
+* Validate database fields.
 * Try Phoenix Framework if throughput is high
