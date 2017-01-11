@@ -44,10 +44,19 @@
 
 **Today's Progress**: I created an Exchange table and linked it to my User table. (I'm defining an exchange as one interaction between the app and the user, where the app asks a question and the user answers it.)
 
-**Thoughts**: I'm working on wrapping my head around associations and foreign keys. Would I learn these concepts better if I used raw SQL instead of Sequelize, even though that would be more difficult and probably not as secure or production-friendly? I'm also noticing that there is a lot of overlap between the different sections of the Sequelize documentation, and it can be hard to know which section will be most useful. It would be helpful if I could find some better documentation for MySQL too. This process feels slow, but I do think I'm learning a lot! 
+**Thoughts**: I'm working on wrapping my head around associations and foreign keys. Would I learn these concepts better if I used raw SQL instead of Sequelize, even though that would be more difficult and probably not as secure or production-friendly? I'm also noticing that there is a lot of overlap between the different sections of the Sequelize documentation, and it can be hard to know which section will be most useful. It would be helpful if I could find some better documentation for MySQL too. This process feels slow, but I do think I'm learning a lot!
 
-### Interim goals
-* Store my sent and received messages using MySQL: http://docs.sequelizejs.com/en/latest/docs/getting-started/#your-first-model.
-* Separate server.js into smaller modules.
-* Validate database fields.
-* Try Phoenix Framework if throughput is high
+## Day 8: Tuesday, January 10
+
+**Today's Progress**: I practiced creating exchange and users instances and linking them to one another.
+
+**Thoughts**: Most of the code I wrote today probably won't end up in the finished project, and I still don't love playing around with Sequelize without fully understanding what's going on, but getting my hands dirty is probably the best way to learn. I'd like to get a better sense of what exists on my server (instances) and what exists in the database (rows). I'd also like to review promises and best practices (like the best way to chain them) so that I don't end up creating an unmanageable Russian doll. 
+
+## Day 9
+
+### Goals
+* Move createExampleUsers to its own file
+* Move the routing and the database setup into different files?
+* Start saving real messages
+* Start saving real users
+* Later: Try Phoenix Framework if throughput is high
