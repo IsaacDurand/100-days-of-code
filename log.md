@@ -50,12 +50,23 @@
 
 **Today's Progress**: I practiced creating exchange and users instances and linking them to one another.
 
-**Thoughts**: Most of the code I wrote today probably won't end up in the finished project, and I still don't love playing around with Sequelize without fully understanding what's going on, but getting my hands dirty is probably the best way to learn. I'd like to get a better sense of what exists on my server (instances) and what exists in the database (rows). I'd also like to review promises and best practices (like the best way to chain them) so that I don't end up creating an unmanageable Russian doll. 
+**Thoughts**: Most of the code I wrote today probably won't end up in the finished project, and I still don't love playing around with Sequelize without fully understanding what's going on, but getting my hands dirty is probably the best way to learn. I'd like to get a better sense of what exists on my server (instances) and what exists in the database (rows). I'd also like to review promises and best practices (like the best way to chain them) so that I don't end up creating an unmanageable Russian doll.
 
-## Day 9
+## Day 9: Wednesday, January 11
+
+**Today's Progress**: When I started coding today, I had a server (created with Express) and a database connection (created with Sequelize), but I wasn't sure how to bring them together so that my app could interact with the database. For help, I did some Googling with the search terms "Express" and "Sequelize", and I found some resources (below) that I'm starting to walk through.
+
+**Thoughts**: I'm feeling a bit discouraged because I didn't make as much progress today as I'd hoped, and I was already feeling tired. I'm trying to remind myself that the important thing is how consistently I'm working on this app, not how quickly I get it done. After all, one of the goals of this project is to give me an opportunity to slow down and really understand everything I'm doing! And I suppose it's a good thing to be moving beyond Express's "hello world" example.
+
+### Resource that may be useful
+* [Express/Sequelize example](https://github.com/sequelize/express-example)
+* [Express/Sequelize explanation](http://docs.sequelizejs.com/en/1.7.0/articles/express/#implementing-a-todo-app)
+* [Express application generator](https://expressjs.com/en/starter/generator.html)
 
 ### Goals
+* **Understand what happens when I run** `daily-debrief/bin/www`
 * Move createExampleUsers to its own file
+* Remove files/folders created by express-generator that I don't need
 * Move the routing and the database setup into different files?
 * Start saving real messages
 * Start saving real users
