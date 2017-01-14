@@ -66,7 +66,14 @@ I also separated my app into multiple modules, which should make it easier to wo
 
 **Thoughts**: Today definitely made up for yesterday. It felt great to see my database data in the browser, and to clean up my repo!
 
+## Day 11: Friday, January 13
+
+**Today's Progress**: I created a node file that, when executed, sends an SMS. I want it to create a database row too, but I'm getting SQL errors when I try to drop my database or save a new exchange.
+
+**Thoughts**: Today was another slow day - I seem to be alternating between bad days (where I get stuck) and good ones (where I have a breakthrough). Hopefully the pattern will hold at least through tomorrow! I'm also feeling a bit burned out, so some sleep should help.
+
 ### Resource that may be useful
+* [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
 * [Express/Sequelize example](https://github.com/sequelize/express-example)
 * [Express/Sequelize explanation](http://docs.sequelizejs.com/en/1.7.0/articles/express/#implementing-a-todo-app)
 * [Express application generator](https://expressjs.com/en/starter/generator.html)
