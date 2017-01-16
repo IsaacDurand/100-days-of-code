@@ -72,6 +72,16 @@ I also separated my app into multiple modules, which should make it easier to wo
 
 **Thoughts**: Today was another slow day - I seem to be alternating between bad days (where I get stuck) and good ones (where I have a breakthrough). Hopefully the pattern will hold at least through tomorrow! I'm also feeling a bit burned out, so some sleep should help.
 
+## Day 12: Sunday, January 15
+
+**Today's Progress**: I fixed the node script so that it will create a row in the exchange table as well as send an SMS. I also realized some important things about my database:
+
+Because each exchange is required to have a user...
+* Before dropping the users table, I must drop the exchange table.
+* Before deleting a specific user from the users table, I must delete any exchanges related to that user.
+
+**Thoughts**: I felt guilty about taking a break yesterday and a bit distracted tonight (the holiday weekend is lovely, but now my schedule is out of whack, and I love my routines), but it was good to get back into the swing of things. Now the goal is momentum!
+
 ### Resource that may be useful
 * [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
 * [Express/Sequelize example](https://github.com/sequelize/express-example)
@@ -79,7 +89,10 @@ I also separated my app into multiple modules, which should make it easier to wo
 * [Express application generator](https://expressjs.com/en/starter/generator.html)
 
 ### Goals
+* Update user's currentExchangeId when I save an exchange
+* Update the appropriate exchange when I receive a response
 * Understand how node modules are imported and exported more deeply
+* Understand this: Why is there a short pause between when a node script finishes executing (or at least when I see the last log) and when I see my command prompt in Terminal again?
 * Start saving real messages
 * Start saving real users
 * Later: discard npm modules I'm not using
