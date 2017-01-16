@@ -82,6 +82,21 @@ Because each exchange is required to have a user...
 
 **Thoughts**: I felt guilty about taking a break yesterday and a bit distracted tonight (the holiday weekend is lovely, but now my schedule is out of whack, and I love my routines), but it was good to get back into the swing of things. Now the goal is momentum!
 
+## Day 13: Monday, January 16
+
+**Today's Progress**: I finished an MVP of start-exchange.js, which now does three things:
+1. Create a message through Twilio (which then sends an SMS)
+2. Create an exchange row in my database
+3. Update the CurrentExchangeId of the corresponding user row in my database (I almost had this working yesterday, but I used an incorrect column name: 'currentExchangeId' rather than 'CurrentExchangeId')
+
+I also refactored the script with promises to avoid the "pyramid of doom". A few key things I learned:
+* When chaining promises, make sure each function in the chain returns a promise.
+* A major benefit of promises is that you can handle all errors in one `catch` statement at the end of the chain, rather than handling errors separately for each function call. (That's what you'd have to do with callbacks.)
+
+To make sure that I'd implemented my `catch` correctly, I tried causing errors in various functions throughout my promise chain. No matter where the error was, my `catch` statement seemed to work correctly.
+
+**Thoughts**: I'm getting back in the groove of this project, and that feels good, though some days are more rewarding than others. I think I'll feel a pretty big sense of accomplishment when I start saving user responses to my database.
+
 ### Resource that may be useful
 * [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
 * [Express/Sequelize example](https://github.com/sequelize/express-example)
@@ -89,11 +104,13 @@ Because each exchange is required to have a user...
 * [Express application generator](https://expressjs.com/en/starter/generator.html)
 
 ### Goals
-* Update user's currentExchangeId when I save an exchange
 * Update the appropriate exchange when I receive a response
-* Understand how node modules are imported and exported more deeply
-* Understand this: Why is there a short pause between when a node script finishes executing (or at least when I see the last log) and when I see my command prompt in Terminal again?
+* Figure out a more elegant way to trigger start-exchange.js
 * Start saving real messages
 * Start saving real users
+* Triage todos
+* Understand how node modules are imported and exported more deeply
+* Understand promises better - which flavor should I start with?
+* Understand this: Why is there a short pause between when a node script finishes executing (or at least when I see the last log) and when I see my command prompt in Terminal again?
 * Later: discard npm modules I'm not using
 * Later: Try Phoenix Framework if throughput is high
