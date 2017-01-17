@@ -97,6 +97,12 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 
 **Thoughts**: I'm getting back in the groove of this project, and that feels good, though some days are more rewarding than others. I think I'll feel a pretty big sense of accomplishment when I start saving user responses to my database.
 
+## Day 14: Tuesday, January 17
+
+**Today's Progress**: I added a POST route to my app that receives message delivery updates from Twilio and updates my database accordingly. (I also accidentally cleared my database - be careful with forcing a database sync!)
+
+**Thoughts**: It's exciting to see the different pieces of my app start to come together.
+
 ### Resource that may be useful
 * [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
 * [Express/Sequelize example](https://github.com/sequelize/express-example)
@@ -104,7 +110,9 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 * [Express application generator](https://expressjs.com/en/starter/generator.html)
 
 ### Goals
+* Understand why I'm not seeing all my post requests in the Twilio console, even though I know these requests are happening, because they're updating the database.
 * Update the appropriate exchange when I receive a response
+* Handle the case where a response spans multiple SMSs
 * Figure out a more elegant way to trigger start-exchange.js
 * Start saving real messages
 * Start saving real users
@@ -112,5 +120,6 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 * Understand how node modules are imported and exported more deeply
 * Understand promises better - which flavor should I start with?
 * Understand this: Why is there a short pause between when a node script finishes executing (or at least when I see the last log) and when I see my command prompt in Terminal again?
+* Understand approaches for organizing the require statements at the top of a script
 * Later: discard npm modules I'm not using
 * Later: Try Phoenix Framework if throughput is high
