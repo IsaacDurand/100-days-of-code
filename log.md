@@ -103,6 +103,12 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 
 **Thoughts**: It's exciting to see the different pieces of my app start to come together.
 
+## Day 15: Wednesday, January 18
+
+**Today's Progress**: I added a POST route that receives user responses and updates my database accordingly. It also sends the user a follow-up SMS thanking them for their response.
+
+**Thoughts**: It's exciting to see complete exchanges in my database! However, there are several questions I still need to address. What if the user's response spans multiple text messages? How can I be certain that the SMS I receive from a user is really a response to the question I just sent? In particular, how can I confirm that the user sent their response after receiving my question? Should the "thank you" message be considered part of the exchange?
+
 ### Resource that may be useful
 * [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
 * [Express/Sequelize example](https://github.com/sequelize/express-example)
@@ -110,7 +116,12 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 * [Express application generator](https://expressjs.com/en/starter/generator.html)
 
 ### Goals
+* Understand the difference between message instances and req/res bodies I receive from Twilio.
+* Add Q&A delivery times to exchange model?
+* Flesh out isOrderCorrect
+* Prevent responses from overriding one another
 * Understand why I'm not seeing all my post requests in the Twilio console, even though I know these requests are happening, because they're updating the database.
+* Understand at what point I should respond with a 200 code
 * Update the appropriate exchange when I receive a response
 * Handle the case where a response spans multiple SMSs
 * Figure out a more elegant way to trigger start-exchange.js
