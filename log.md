@@ -109,18 +109,26 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 
 **Thoughts**: It's exciting to see complete exchanges in my database! However, there are several questions I still need to address. What if the user's response spans multiple text messages? How can I be certain that the SMS I receive from a user is really a response to the question I just sent? In particular, how can I confirm that the user sent their response after receiving my question? Should the "thank you" message be considered part of the exchange?
 
-### Resource that may be useful
-* [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
-* [Express/Sequelize example](https://github.com/sequelize/express-example)
-* [Express/Sequelize explanation](http://docs.sequelizejs.com/en/1.7.0/articles/express/#implementing-a-todo-app)
-* [Express application generator](https://expressjs.com/en/starter/generator.html)
+## Day 16: Thursday, January 19
+
+**Today's Progress**: Today was more of a research day than a code-writing day. I looked into the Twilio API (using `curl | pbcopy` - pretty nifty) to see how close I could get to knowing when each question I'm sending is delivered and when each answer I receive is sent. There is some information available on the Message resource, but Twilio doesn't send it to me when I receive an inbound message or an outbound message delivery update. Rather than making an API request for this information, which is incomplete anyway, I'll log when I receive delivery confirmations for outbound messages and when I receive inbound messages from Twilio.
+
+To start, I added a questionDeliveryConfirmedAt column to the Exchange model and wrote a migration to update my old exchanges.
+
+**Thoughts**: I didn't get as much done today as I'd hoped, but it was good to practice Terminal commands and migrations. I'm still wrapping my head around when migrations are necessary and what exactly sequelize.sync does.
 
 ### Goals
-* Understand the difference between message instances and req/res bodies I receive from Twilio.
+1. Revise updateExchange.saveStatus to save questionDeliveryConfirmedAt
+2. Revise /answer route to confirm that answer is received after questionDeliveryConfirmedAt
+3. Use a linked-list-type structure to hold responses.
+
+* Determine whether I need the config and models folders created when I ran sequelize init
+* Understand when to run migrations and when to just update my model definitions and sync
 * Add Q&A delivery times to exchange model?
 * Flesh out isOrderCorrect
 * Prevent responses from overriding one another
 * Understand why I'm not seeing all my post requests in the Twilio console, even though I know these requests are happening, because they're updating the database.
+* Understand how to use curl and pbcopy together
 * Understand at what point I should respond with a 200 code
 * Update the appropriate exchange when I receive a response
 * Handle the case where a response spans multiple SMSs
@@ -134,3 +142,9 @@ To make sure that I'd implemented my `catch` correctly, I tried causing errors i
 * Understand approaches for organizing the require statements at the top of a script
 * Later: discard npm modules I'm not using
 * Later: Try Phoenix Framework if throughput is high
+
+### Resource that may be useful
+* [Twilio conversation](https://www.twilio.com/docs/guides/sms/how-to-create-sms-conversations-in-node-js)
+* [Express/Sequelize example](https://github.com/sequelize/express-example)
+* [Express/Sequelize explanation](http://docs.sequelizejs.com/en/1.7.0/articles/express/#implementing-a-todo-app)
+* [Express application generator](https://expressjs.com/en/starter/generator.html)
