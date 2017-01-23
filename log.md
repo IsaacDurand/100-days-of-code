@@ -117,11 +117,21 @@ To start, I added a questionDeliveryConfirmedAt column to the Exchange model and
 
 **Thoughts**: I didn't get as much done today as I'd hoped, but it was good to practice Terminal commands and migrations. I'm still wrapping my head around when migrations are necessary and what exactly sequelize.sync does.
 
-### Goals
-1. Revise updateExchange.saveStatus to save questionDeliveryConfirmedAt
-2. Revise /answer route to confirm that answer is received after questionDeliveryConfirmedAt
-3. Use a linked-list-type structure to hold responses.
+## Day 17: Monday, January 23
 
+**Today's Progress**: Today I...
+* Revised the method that updates exchange statuses so that it also updates the questionDeliveryConfirmedAt column after a question is delivered
+* Added a mechanism to prevent the app from linking an answer (inbound message) to a question (outbound message) unless the answer was received after the question delivery confirmation
+* Created an AdditionalAnswer model to account for answers that span multiple SMSs, linked this model to the exchange model, and wrote a migration to update the exchange model
+
+**Thoughts**: My progress feels a bit slow at the moment, partially because I took a break over the weekend and partially because I wonder whether I'm devoting too much time to edge cases before getting my MVP running. I'd like to build some momentum this week.
+
+### Goals
+
+* updateExchange.createAdditionalAnswer
+* Diagram my app
+* Make my app text me about weekend goals
+* Do I need an "additional answers" construct?
 * Determine whether I need the config and models folders created when I ran sequelize init
 * Understand when to run migrations and when to just update my model definitions and sync
 * Add Q&A delivery times to exchange model?
